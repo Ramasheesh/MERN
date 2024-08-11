@@ -1,0 +1,214 @@
+import React ,{useState} from "react";
+import "../css/Contacts.css"; 
+import Notification from './Notification';
+import {
+  FaWhatsapp,
+  FaFacebook,
+  FaLinkedin,
+  FaTelegram,
+  FaInstagram,
+} from "react-icons/fa"; 
+import axios from "axios";
+
+const Contacts = () => {
+  const [mobileNumber, setMobileNumber] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false); // To manage form submission state
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
+    const mobileNumber = formData.get("number");
+      // Basic validation
+      const regex = /^[0-9]{10}$/; // 10 digits
+      if (!regex.test(mobileNumber)) {
+        alert('Please enter a valid 10-digit mobile number.');
+        return;
+      }
+      // Assuming successful response
+      setIsSubmitting(true); 
+    try {
+      const response = axios.post("http://localhost:4000/send/message", {name,
+          email,
+          message,
+          mobileNumber,
+      });
+      console.log('response: ', response);
+
+      await new Promise((resolve) => setTimeout(resolve, 300)); // Simulate network delay
+      setSuccessMessage('Message sent successfully!');
+      setTimeout(() => setSuccessMessage(''), 3000); 
+      // console.log('response: ', response);
+
+      // window.open("http://localhost:3000", "_self");
+    } catch (error) {
+      console.error(
+        "Error during message sending:",
+        error.response ? error.response.data : error.message
+      );
+    }finally {
+      setIsSubmitting(false); // Reset submitting state
+    }
+  };
+
+  return (
+    <>
+          <Notification message={successMessage} onClose={() => setSuccessMessage('')} />
+
+      <h2 style={{ marginTop: "30px" }}>Contact Information</h2>
+
+      <div className="contact-container">
+        <div className="form-content">
+          <h3>Send Me a Message</h3>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name" className="form-label">
+                Name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="name"
+                placeholder="Enter your name" name="name" required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email" className="form-label">
+                Email
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                placeholder="Enter your email" name="email" required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="message" className="form-label">
+                Message
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="message"
+                placeholder="Enter your message" name="message" 
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="number" className="form-label">
+                Mobile Number
+              </label>
+              <input
+                type="tel"
+                className="form-control"
+                id="number"
+                name= "number"
+               
+                value={mobileNumber}
+                onChange={(e) => setMobileNumber(e.target.value)}
+                pattern="[0-9]{10}"
+                placeholder="Enter 10-digit mobile number"
+                required
+              />
+              <button type="submit" className="btn btn-primary " disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </button>
+      {/* Success Message */}
+      {successMessage && (
+                <div className="success-message">{successMessage}</div>
+              )}
+              </div>
+          </form>
+        </div>
+        <div className="contact-info">
+          <h3>Connect with me</h3>
+          <p>Calling Numbers:{" "} 8874910202, 6283757617</p>
+          <p>
+            WhatsApp Numbers:{" "}
+            <a
+              href="https://wa.me/7234876285?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              6283757617,
+            </a>
+          </p>
+          <p>
+            <a
+              href="https://wa.me/7234876285?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              7234876285
+            </a>
+          </p>
+          <p>
+            Telegram Numbers:{" "}
+            <a
+              href="https://t.me/ramasheeshchauhan?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              6283757617
+            </a>{" "}
+          </p>
+          <p>
+            Email:{" "}
+            <a href="mailto:ramasheesh.g7576@gmail.com?subject=Subject%20Here&body=Message%20Here">
+              ramasheesh.g7576@gmail.com
+            </a>
+          </p>
+          <p>
+            {" "}
+            <a href="mailto:ramasheeshch9920@gmail.com?subject=Subject%20Here&body=Message%20Here">
+              ramasheeshch9920@gmail.com
+            </a>
+          </p>
+          <div className="social-icons">
+            <a
+              href="https://linkedin.com/in/ramasheesh-chauhan-872220159"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin size={30} />
+            </a>
+            <a
+              href="https://wa.me/7234876285?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp size={30} />
+            </a>
+            <a
+              href="https://www.facebook.com/ramashish.chauhan.5688"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebook size={30} />
+            </a>
+            <a
+              href="https://t.me/ramasheeshchauhan?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTelegram size={30} />
+            </a>
+            <a
+              href="https://www.instagram.com/ramasheesh12/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram size={30} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Contacts;

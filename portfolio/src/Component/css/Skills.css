@@ -1,0 +1,192 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: "Arial", sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  height: 100%;
+}
+
+/* Container */
+.skills-slide-container {
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Titles */
+.skills-slide-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #00f5d4;
+  text-align: center;
+}
+
+.skills-section-title {
+  font-size: 1.5em;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fee440;
+}
+
+/* Skills List */
+.skills-slide-list {
+  list-style: none;
+  padding: 10px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  justify-content: center;
+}
+
+.skills-slide-item {
+  display: grid;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  background-color: #1c1c1c;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-slide-item:hover {
+  background-color: #495057;
+  transform: scale(1.04);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.skills-slide-item i {
+  font-size: 3em;
+}
+
+.skills-slide-details {
+  /* margin-top: 20px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-slide-description {
+  margin: 12px 0;
+  font-size: 1em;
+  color: #e9ecef;
+}
+
+.skills-slide-project-link a {
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+
+}
+
+.skills-slide-project-link a:hover {
+  text-decoration: underline;
+}
+
+/* Full-width Slide */
+.skills-full-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
+  flex-direction: column;
+}
+
+.skills-full-slide-icon {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.skills-full-slide-interest {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  gap: 20px;
+}
+
+.skills-full-slide-interest .skills-interest-icon {
+  font-size: 3em;
+  color: #61dbfb; /* Default color, adjust as needed */
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skills-full-slide-interest .skills-interest-icon:hover {
+  transform: scale(1.1);
+  color: #007bff; /* Color change on hover */
+}
+
+.skills-full-slide-interest .skills-interest-icon.nodejs {
+  color: #68a063; /* Node.js green color */
+}
+
+.skills-full-slide-interest .skills-interest-icon.mongodb {
+  color: #4db33d; /* MongoDB green color */
+}
+
+.skills-full-slide-interest .skills-interest-icon.express {
+  color: #888; /* Express gray color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .skills-full-slide-interest {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .skills-full-slide-interest .skills-interest-icon {
+      font-size: 2.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-slide-item {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .skills-slide-item i {
+      font-size: 2.5em;
+  }
+
+  .skills-slide-title {
+      font-size: 1.2em;
+  }
+
+  .skills-full-slide-icon {
+      font-size: 2.5em;
+  }
+
+  .skills-full-slide-content {
+      font-size: 0.9em;
+  }
+
+  .skills-slide-description {
+      font-size: 0.8em;
+  }
+
+  .skills-slide-project-link {
+      font-size: 0.9em;
+  }
+}

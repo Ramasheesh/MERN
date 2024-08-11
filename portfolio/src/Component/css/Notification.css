@@ -1,0 +1,26 @@
+/* Styles for the notification */
+.notification {
+    position: fixed;
+    top: 40px;
+    right: 15px;
+    transform: translateX(-50%);
+    background-color: #79d985; /* Light blue background for success */
+    color: #222; /* Dark blue text color */
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #a6c0ff; /* Blue border */
+    border-radius: 5px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensure notification is on top */
+  }
+  
+  .notification-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
