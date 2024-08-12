@@ -113,7 +113,7 @@ const Home = () => {
             </a>
           </div>
           <a
-            href="https://drive.google.com/drive/u/0/home"
+            href="https://drive.google.com/file/d/19bPDOjTig4US22LIS8o9o4HILOLT6h_B/view?usp=sharing"
             className="resume-button"
           >
             My Resume
