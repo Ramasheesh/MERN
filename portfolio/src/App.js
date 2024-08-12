@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect  } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Component/js/Header";
 import Home from "./Component/js/Home";
@@ -9,21 +9,21 @@ import Skills from "./Component/js/Skills";
 import "./App.css";
 
 import Loading from "./Component/js/Loading";
+import ServerError from './Component/js/ServerError';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-      console.log("Loading Started");
+      // console.log("Loading Started");
     }, 1500);
     return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
     return <Loading />;
-  }
+  } 
 
   return (
     <>
@@ -34,6 +34,7 @@ function App() {
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
+        <Route path ='*' element={<ServerError/>} />
       </Routes>
       <div>
         <footer className="footer">
