@@ -92,7 +92,6 @@ const Home = () => {
             field of software development.
           </p>
           <div className="social-icons-home">
-            {/* Social Icons */}
             <a href="#facebook" className="icon" onClick={onClickFacebook}>
               <i className="fab fa-facebook-f"></i>
             </a>
