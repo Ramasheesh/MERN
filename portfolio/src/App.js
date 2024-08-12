@@ -17,13 +17,14 @@ function App() {
     const timer = setTimeout(() => {
       setIsLoading(false);
       console.log("Loading Started");
-    }, 3000);
+    }, 1500);
     return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
-    <Loading />;
+    return <Loading />;
   }
+
   return (
     <>
       <Header />

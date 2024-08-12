@@ -10,31 +10,31 @@ const Skills = () => {
       name: "JavaScript",
       description:
         "JavaScript is a versatile language used for web development, enabling features like asynchronous programming and DOM manipulation.",
-      projectLink: "https://github.com/yourusername/javascript-calculator",
-      projectName: "JavaScript Calculator",
+      projectLink: "https://github.com/Ramasheesh/mernProjects",
+      projectName: "JavaScript Clone and More",
     },
     {
       iconClass: "devicon-nodejs-plain colored",
       name: "Node.js",
       description:
         "Node.js is a JavaScript runtime that allows you to build scalable network applications on the server-side using JavaScript.",
-      projectLink: "https://github.com/yourusername/nodejs-api",
-      projectName: "Node.js API",
+      projectLink: "https://github.com/Ramasheesh/scrapping",
+      projectName: "Scrapping Ipl 2023",
     },
     {
       iconClass: "devicon-java-plain colored",
       name: "Java",
       description:
         "Java is a high-level, object-oriented programming language widely used for building enterprise-scale applications.",
-      projectLink: "https://github.com/yourusername/java-springboot-app",
-      projectName: "Spring Boot App",
+      projectLink: "https://github.com/Ramasheesh/college-project-",
+      projectName: "Andriod attendance App",
     },
     {
       iconClass: "devicon-python-plain colored",
       name: "Python",
       description:
         "Python is a high-level programming language known for its simplicity and readability, often used for web development, data science, and automation.",
-      projectLink: "https://github.com/yourusername/python-data-analysis",
+      projectLink: "https://github.com/Ramasheesh",
       projectName: "Data Analysis Project",
     },
     {
@@ -42,23 +42,23 @@ const Skills = () => {
       name: "React",
       description:
         "React is a JavaScript library for building user interfaces, allowing developers to create reusable components and manage the view layer of web applications.",
-      projectLink: "https://github.com/yourusername/react-portfolio",
-      projectName: "React Portfolio",
+      projectLink: "https://github.com/Ramasheesh/MERN",
+      projectName: "My Portfolio",
     },
     {
       iconClass: "devicon-express-original colored",
       name: "Express",
       description:
         "Express is a minimal and flexible Node.js web application framework that provides robust features for building web and mobile applications.",
-      projectLink: "https://github.com/yourusername/express-app",
-      projectName: "Express Web App",
+      projectLink: "https://github.com/Ramasheesh/collageApi",
+      projectName: "Collage Api Backend",
     },
     {
       iconClass: "devicon-mongodb-plain colored",
       name: "MongoDB",
       description:
         "MongoDB is a NoSQL database that uses a flexible document model, allowing for efficient storage and retrieval of data.",
-      projectLink: "https://github.com/yourusername/mongodb-app",
+      projectLink: "https://github.com/Ramasheesh",
       projectName: "MongoDB CRUD App",
     },
     {
@@ -66,7 +66,7 @@ const Skills = () => {
       name: "Git/GitHub",
       description:
         "Git is a distributed version control system, and GitHub is a web-based platform for version control and collaboration. Together, they are essential tools for developers.",
-      projectLink: "https://github.com/yourusername/git-workflow",
+      projectLink: "https://github.com/Ramasheesh/",
       projectName: "Git Workflow Tutorial",
     },
     {
@@ -74,7 +74,7 @@ const Skills = () => {
       name: "Figma",
       description:
         "Figma is a web-based design tool that enables real-time collaboration, allowing teams to design, prototype, and gather feedback on digital projects.",
-      projectLink: "https://www.figma.com/file/yourprojectid/figma-design",
+      projectLink: "https://www.figma.com/file/Ramasheesh",
       projectName: "Figma Design Project",
     },
   ];
