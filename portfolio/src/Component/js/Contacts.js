@@ -121,9 +121,9 @@ const Contacts = () => {
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
-              {successMessage && (
+              {/* {successMessage && (
                 <div className="success-message">{successMessage}</div>
-              )}
+              )} */}
             </div>
           </form>
         </div>
