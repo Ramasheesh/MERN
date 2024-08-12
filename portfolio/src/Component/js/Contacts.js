@@ -1,20 +1,19 @@
-import React ,{useState} from "react";
-import "../css/Contacts.css"; 
-import Notification from './Notification';
+import React, { useState } from "react";
+import "../css/Contacts.css";
+import Notification from "./Notification";
 import {
   FaWhatsapp,
   FaFacebook,
   FaLinkedin,
   FaTelegram,
   FaInstagram,
-} from "react-icons/fa"; 
+} from "react-icons/fa";
 import axios from "axios";
 
 const Contacts = () => {
-  const [mobileNumber, setMobileNumber] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false); // To manage form submission state
-
+  const [mobileNumber, setMobileNumber] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,44 +22,42 @@ const Contacts = () => {
     const email = formData.get("email");
     const message = formData.get("message");
     const mobileNumber = formData.get("number");
-      // Basic validation
-      const regex = /^[0-9]{10}$/; // 10 digits
-      if (!regex.test(mobileNumber)) {
-        alert('Please enter a valid 10-digit mobile number.');
-        return;
-      }
-      // Assuming successful response
-      setIsSubmitting(true); 
+    const regex = /^[0-9]{10}$/;
+    if (!regex.test(mobileNumber)) {
+      alert("Please enter a valid 10-digit mobile number.");
+      return;
+    }
+    setIsSubmitting(true);
     try {
-      const response = axios.post("http://localhost:4000/send/message", {name,
-          email,
-          message,
-          mobileNumber,
+      const response = axios.post("http://localhost:4000/send/message", {
+        name,
+        email,
+        message,
+        mobileNumber,
       });
-      console.log('response: ', response);
+      console.log("response: ", response);
 
-      await new Promise((resolve) => setTimeout(resolve, 300)); // Simulate network delay
-      setSuccessMessage('Message sent successfully!');
-      setTimeout(() => setSuccessMessage(''), 3000); 
-      // console.log('response: ', response);
-
+      await new Promise((resolve) => setTimeout(resolve, 300));
+      setSuccessMessage("Message sent successfully!");
+      setTimeout(() => setSuccessMessage(""), 3000);
       // window.open("http://localhost:3000", "_self");
     } catch (error) {
       console.error(
         "Error during message sending:",
         error.response ? error.response.data : error.message
       );
-    }finally {
-      setIsSubmitting(false); // Reset submitting state
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <>
-          <Notification message={successMessage} onClose={() => setSuccessMessage('')} />
-
+      <Notification
+        message={successMessage}
+        onClose={() => setSuccessMessage("")}
+      />
       <h2 style={{ marginTop: "30px" }}>Contact Information</h2>
-
       <div className="contact-container">
         <div className="form-content">
           <h3>Send Me a Message</h3>
@@ -73,7 +70,9 @@ const Contacts = () => {
                 type="text"
                 className="form-control"
                 id="name"
-                placeholder="Enter your name" name="name" required
+                placeholder="Enter your name"
+                name="name"
+                required
               />
             </div>
             <div className="form-group">
@@ -84,7 +83,8 @@ const Contacts = () => {
                 type="email"
                 className="form-control"
                 id="email"
-                placeholder="Enter your email" name="email" required
+                placeholder="Enter your email"
+                name="email"
               />
             </div>
             <div className="form-group">
@@ -95,7 +95,8 @@ const Contacts = () => {
                 type="text"
                 className="form-control"
                 id="message"
-                placeholder="Enter your message" name="message" 
+                placeholder="Enter your message"
+                name="message"
               />
             </div>
             <div className="form-group">
@@ -106,27 +107,29 @@ const Contacts = () => {
                 type="tel"
                 className="form-control"
                 id="number"
-                name= "number"
-               
+                name="number"
                 value={mobileNumber}
                 onChange={(e) => setMobileNumber(e.target.value)}
                 pattern="[0-9]{10}"
                 placeholder="Enter 10-digit mobile number"
                 required
               />
-              <button type="submit" className="btn btn-primary " disabled={isSubmitting}>
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+              <button
+                type="submit"
+                className="btn btn-primary "
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
-      {/* Success Message */}
-      {successMessage && (
+              {successMessage && (
                 <div className="success-message">{successMessage}</div>
               )}
-              </div>
+            </div>
           </form>
         </div>
         <div className="contact-info">
           <h3>Connect with me</h3>
-          <p>Calling Numbers:{" "} 8874910202, 6283757617</p>
+          <p>Calling Numbers: 8874910202, 6283757617</p>
           <p>
             WhatsApp Numbers:{" "}
             <a

@@ -21,7 +21,6 @@ html {
 }
 
 .left-section {
-  /* margin: 20px 0; */
   flex: 1;
   padding: 20px;
   animation: slideInLeft 1s ease-in-out;
@@ -46,12 +45,7 @@ html {
     transform: scale(1.1);
   }
 }
-/* .right-section {
-  flex: 1;  
-  display: flex;
-  padding:0;
-  justify-content: center;
-} */
+
 .right-section {
   max-width: 100%;
   width: 450px;
@@ -93,7 +87,7 @@ html {
     red, orange, yellow, green, blue, indigo, violet, red);
   background-size: 200% 200%;
   z-index: -1; 
-  animation: flowColors 3s linear infinite; /* Infinite animation */
+  animation: flowColors 3s linear infinite;
 }
 
 @keyframes flowColors {
@@ -183,11 +177,9 @@ html {
   from,
   to {
     border-color: transparent;
-    /* color: #f7c948; */
 
   }
   50% {
-     /* color: #1a1a1a; */
     color: #ff4081;
 
   }
@@ -201,7 +193,6 @@ html {
     padding: 0 4px;
   }
   100% {
-    /* background-color: #ff4081; */
     color: #06d6a0;
 
   }
@@ -211,7 +202,6 @@ html {
 .profession {
   font-size: 2rem;
   margin-bottom: 20px;
-  /* color: #80ffdb; */
 }
 
 .typing-text {
@@ -242,8 +232,6 @@ html {
 }
 
 .icon {
-  /* margin-right: 10px;
-  margin-left: 10px; */
   justify-content: space-between;
   padding: 20px;
   color: #fff;
@@ -256,7 +244,6 @@ html {
 }
 
 .resume-button {
-  /* margin-left: 40px; */
   padding: 10px 20px;
   background-color: #00bcd4;
   color: #fff;

@@ -1,7 +1,7 @@
 import React ,{useEffect}from "react";
 import "../css/Home.css";
 import developerImg from "../ramashish.png";
-// import {LinkTo } from 'react-router-dom'
+
 const Home = () => {
   const onClickHandle = (event) => {
     event.preventDefault();
@@ -43,9 +43,9 @@ const Home = () => {
       if (charIndex < texts[index].length) {
         textElement.textContent += texts[index].charAt(charIndex);
         charIndex++;
-        typingTimeout = setTimeout(typeText, 150); // Adjust typing speed here
+        typingTimeout = setTimeout(typeText, 150); 
       } else {
-        erasingTimeout = setTimeout(eraseText, 1000); // Adjust time before erasing text
+        erasingTimeout = setTimeout(eraseText, 1000); 
       }
     }
   
@@ -53,21 +53,18 @@ const Home = () => {
       if (charIndex > 0) {
         textElement.textContent = texts[index].substring(0, charIndex - 1);
         charIndex--;
-        erasingTimeout = setTimeout(eraseText, 100); // Adjust erasing speed here
+        erasingTimeout = setTimeout(eraseText, 100);
       } else {
-        index = (index + 1) % texts.length; // Loop through texts
-        charIndex = 0; // Reset character index
-        setTimeout(typeText, 500); // Adjust time before typing next text
+        index = (index + 1) % texts.length; 
+        charIndex = 0; 
+        setTimeout(typeText, 500); 
       }
     }
   
-    // Clear any existing content
     textElement.textContent = '';
   
-    // Start typing the first text
     typingTimeout = setTimeout(typeText, 1000);
   
-    // Cleanup function to clear timeouts on component unmount
     return () => {
       clearTimeout(typingTimeout);
       clearTimeout(erasingTimeout);

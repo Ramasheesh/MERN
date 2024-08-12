@@ -27,31 +27,32 @@ app.post("/send/message", async (req, res) => {
     // Save to MongoDB
     const messageData = new Message({ name, email, message, mobileNumber });
     await messageData.save();
-    console.log("messageData: ", messageData);
 
     // Send Email
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
+    if (email) {
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
+        },
+      });
 
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: email,
-      subject: "New Message Received",
-      text: `You have a new message from ${name}. Message: ${message}, Mobile Number: ${mobileNumber}.`,
-    };
+      const mailOptions = {
+        from: process.env.EMAIL_USER,
+        to: email,
+        subject: "New Message Received",
+        text: `You have a new message from ${name}. Message: ${message}, Mobile Number: ${mobileNumber}.`,
+      };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log("Email sent: " + info.response);
-      }
-    });
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          console.log("Email error: ", error);
+        } else {
+          console.log("Email sent: " + info.response);
+        }
+      });
+    }
 
     // Send WhatsApp Message
     const client = twilio(
@@ -61,16 +62,20 @@ app.post("/send/message", async (req, res) => {
     const number = "8874910202";
     const messageTemplate = `
 New Contact Request:
+
 Name: ${name}
+
 Email: ${email}
+
 Phone: ${mobileNumber}
+
 Message: ${message}
 
 Please reach out to them at your earliest convenience.
 `;
     client.messages
       .create({
-        from: `whatsapp:+14155238886`,
+        from: process.env.TWILIO_WHATSAPP_NUMBER,
         to: `whatsapp:+91${number}`,
         body: messageTemplate,
       })
@@ -81,14 +86,12 @@ Please reach out to them at your earliest convenience.
     // Send SMS
     client.messages
       .create({
-        from: "+18544003061", //process.env.TWILIO_PHONE_NUMBER,
+        from: process.env.TWILIO_PHONE_NUMBER,
         to: `+91${number.replace(/^0+/, "")}`,
         body: messageTemplate,
       })
       .then((messageData) => console.log("SMS sent: " + messageData.sid))
       .catch((err) => console.log(err));
-
-    // Respond to the client after all operations are complete
     res.send("Message sent successfully");
   } catch (err) {
     console.error("An error occurred: ", err);
