@@ -1,15 +1,14 @@
 /* Styles for the notification */
 .notification {
     position: fixed;
-    top: 40px;
+    top: 30px;
     right: 15px;
     transform: translateX(-50%);
     background-color: #79d985; 
     color: #222; 
     padding: 20px;
-    margin: 10px;
     border: 1px solid #a6c0ff; 
-    border-radius: 5px;
+    border-radius: 8px;
     font-size: 20px;
     display: flex;
     justify-content: space-between;

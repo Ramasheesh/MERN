@@ -8,12 +8,13 @@
     max-width: 1200px;
     margin: auto;
     padding: 20px;
+    min-height:100vh
 }
 
 .contact-info{
      flex: 1 1 45%;
      padding: 15px;
-     margin: 15px;
+     margin: 15px ;
      border-radius: 10px;
      align-items:center;
      background-color: #111;
@@ -52,7 +53,7 @@ h2{
     text-align: center;
 }
  h3 {
-    color: #fee440;
+    color: #007bff;
     margin-bottom: 10px;
     text-align: center;
 }
@@ -165,8 +166,8 @@ h2{
     }
     .contact-info {
         display: block;
-     margin-inline-start:0px;
-     margin-right:10px;
+     /* margin-inline-start:9px; */
+     /* margin-right:10px; */
 
     }
 }

@@ -16,7 +16,7 @@ const Header = () => {
       <div className="branding">
         <h3 className="branding-text">
           <span className="code-tag"> &lt;</span> 
-           RamAsheesh 
+           RamAshish 
           <span className="code-tag"> /&gt;</span>
         </h3>
       </div>

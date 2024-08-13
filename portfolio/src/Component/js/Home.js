@@ -7,6 +7,10 @@ const Home = () => {
     event.preventDefault();
     window.open("https://github.com/Ramasheesh?tab=repositories", "_blank");
   };
+  const onClickWhatsapp = (event) => {
+    event.preventDefault();
+    window.open("https://wa.me/6283757617?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you.", "_blank");
+  };
   const onClickLinkedin = (event) => {
     event.preventDefault();
     window.open(
@@ -79,7 +83,7 @@ const Home = () => {
             Hi, <span className="wave">👋</span>
           </h1>
           <h1 className="name">
-            I'm <span className="highlight">RamAsheesh Chauhan !</span>
+            I'm <span className="highlight">RamAshish Chauhan !</span>
           </h1>
           <h2 className="profession">
             I'm a <span className="typing-text "></span>
@@ -94,6 +98,9 @@ const Home = () => {
           <div className="social-icons-home">
             <a href="#facebook" className="icon" onClick={onClickFacebook}>
               <i className="fab fa-facebook-f"></i>
+            </a>
+            <a href="#whatsapp" className="icon" onClick={onClickWhatsapp}>
+              <i className="fab fa-whatsapp"></i>
             </a>
             <a href="#twiter" className="icon" onClick={onClickTwiter}>
               <i className="fab fa-twitter"></i>
@@ -111,12 +118,14 @@ const Home = () => {
               <i className="fab fa-github"></i>
             </a>
           </div>
-          <a
-            href="https://drive.google.com/file/d/19bPDOjTig4US22LIS8o9o4HILOLT6h_B/view?usp=sharing"
-            className="resume-button"
-          >
-            My Resume
-          </a>
+          <div className ="button-setup">
+            <a
+              href="https://drive.google.com/file/d/19bPDOjTig4US22LIS8o9o4HILOLT6h_B/view?usp=sharing"
+              className="resume-button"
+            >
+              My Resume
+            </a>
+          </div>
         </div>
 
         <div className="right-section image-container">
