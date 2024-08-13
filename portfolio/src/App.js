@@ -38,8 +38,8 @@ function App() {
       </Routes>
       <div>
         <footer className="footer">
-          <section className="section">
-            <p>© 2024 RamAsheesh Chauhan. All rights reserved.</p>{" "}
+          <section className="section-tag">
+            <p>© 2024 RamAshish Chauhan. All rights reserved.</p>{" "}
           </section>
         </footer>
       </div>

@@ -133,7 +133,7 @@ const Contacts = () => {
           <p>
             WhatsApp Numbers:{" "}
             <a
-              href="https://wa.me/7234876285?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
+              href="https://wa.me/6283757617?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -142,11 +142,11 @@ const Contacts = () => {
           </p>
           <p>
             <a
-              href="https://wa.me/7234876285?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
+              href="https://wa.me/8874910202?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
               target="_blank"
               rel="noopener noreferrer"
             >
-              7234876285
+              8874910202
             </a>
           </p>
           <p>
@@ -180,7 +180,7 @@ const Contacts = () => {
               <FaLinkedin size={30} />
             </a>
             <a
-              href="https://wa.me/7234876285?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
+              href="https://wa.me/6283757617?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
               target="_blank"
               rel="noopener noreferrer"
             >

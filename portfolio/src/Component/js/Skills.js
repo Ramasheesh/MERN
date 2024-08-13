@@ -102,7 +102,7 @@ const Skills = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Demo Project: {skill.projectName}
+                  Project Link: {skill.projectName}
                 </a>
               </p>
             </div>
@@ -117,7 +117,7 @@ const Skills = () => {
           <ul className="skills-slide-list">
             <li>
               <i className="devicon-nodejs-plain skills-interest-icon nodejs">
-                Node.js
+                NodeJS
               </i>
             </li>
             <li>
@@ -127,7 +127,7 @@ const Skills = () => {
             </li>
             <li>
               <i className="devicon-express-original skills-interest-icon express">
-                Express
+                ExpressJS
               </i>
             </li>
           </ul>

@@ -9,7 +9,7 @@ const About = () => {
         <ul>
           <p className="slide-content">
             <li>
-              <strong>Name:</strong> RamAsheesh Chauhan
+              <strong>Name:</strong> RamAshish Chauhan
               <br />
             </li>
             <li>
@@ -19,7 +19,7 @@ const About = () => {
             <li>
               <strong>Profession:</strong> I am a passionate and dedicated
               software developer with a strong foundation in Computer Science
-              and Engineering, having completed my <span className='highlight-2'>B.E / B.Tech </span> degree from 
+              and Engineering, having completed my <span className='highlight-2'>B.E / B.Tech </span> from 
               <span className='highlight-2'> Punjab University Chandigarh</span>. With a keen interest in mobile and
               web development, I am proficient in technologies like NodeJS and
               ReactJS, allowing me to build responsive, user-friendly applications
@@ -32,8 +32,8 @@ const About = () => {
       <div className="slide-2">
         <h1 className="slide-title">Education</h1>
         <ul className="slide-content">
-          <li>Completed 12th in 2015 with <span className='highlight-2'> 81% </span> Marks in Science subjects.</li>
-          <li>Completed 10th in 2013 with <span className='highlight-2'> 83% </span> Marks in Science subjects.</li>
+          <li>Completed 12th in 2016 with <span className='highlight-2'> 81% </span> Marks in Science subjects.</li>
+          <li>Completed 10th in 2014 with <span className='highlight-2'> 83% </span> Marks in Science subjects.</li>
           <li>
             Prepared for JEE Mains + Advanced from 2015 to 2017 at Kota Center
             Career-Point and Resonance.

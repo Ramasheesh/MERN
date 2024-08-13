@@ -7,7 +7,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-const port = process.env.PORT || 4040;
+const PORT = process.env.PORT || 4040;
+const HOST = process.env.HOST || 'localhost';
 const dbConnect = require("./connection/Db.connection");
 const Message = require("./models/contacts.js");
 
@@ -49,7 +50,7 @@ app.post("/send/message", async (req, res) => {
         if (error) {
           console.log("Email error: ", error);
         } else {
-          console.log("Email sent: " + info.response);
+          console.log("Email sent Successfully  " )//+ info.response);
         }
       });
     }
@@ -80,7 +81,9 @@ Please reach out to them at your earliest convenience.
         body: messageTemplate,
       })
       .then((messageData) =>
-        console.log("WhatsApp message sent: " + messageData.sid)
+        // console.log("WhatsApp message sent: " + messageData.sid);
+      console.log("WhatsApp message sent Successfully ")
+
       )
       .catch((err) => console.log(err));
     // Send SMS
@@ -90,7 +93,7 @@ Please reach out to them at your earliest convenience.
         to: `+91${number.replace(/^0+/, "")}`,
         body: messageTemplate,
       })
-      .then((messageData) => console.log("SMS sent: " + messageData.sid))
+      .then((messageData) => console.log("SMS sent Successfully " ))//+ messageData.sid))
       .catch((err) => console.log(err));
     res.send("Message sent successfully");
   } catch (err) {
@@ -99,10 +102,10 @@ Please reach out to them at your earliest convenience.
   }
 });
 
-app.listen(port, async () => {
+app.listen(PORT,'0.0.0.0', HOST, async () => {
   try {
     await dbConnect.dbConnection();
-    console.log(`Server listening on port ${port}`);
+    console.log(`Server listening on port: ${PORT} And Host: ${HOST}`);
   } catch (error) {
     console.log("error: ", error);
   }
