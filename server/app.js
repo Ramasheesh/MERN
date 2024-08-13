@@ -81,7 +81,7 @@ Please reach out to them at your earliest convenience.
         body: messageTemplate,
       })
       .then((messageData) =>
-        console.log("WhatsApp message sent: " + messageData.sid))
+        console.log("WhatsApp message sent: "))
       // console.log("WhatsApp message sent Successfully ")
       .catch((err) => console.log(err));
     // Send SMS
@@ -91,7 +91,7 @@ Please reach out to them at your earliest convenience.
         to: `+91${number.replace(/^0+/, "")}`,
         body: messageTemplate,
       })
-      .then((messageData) => console.log("SMS sent Successfully " + messageData.sid))
+      .then((messageData) => console.log("SMS sent Successfully " ))
       .catch((err) => console.log(err));
     res.send("Message sent successfully");
   } catch (err) {
