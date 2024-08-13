@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4040;
 const HOST = process.env.HOST || 'localhost';
 const dbConnect = require("./connection/Db.connection");
 const Message = require("./models/contacts.js");
