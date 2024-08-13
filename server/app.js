@@ -81,7 +81,7 @@ Please reach out to them at your earliest convenience.
         body: messageTemplate,
       })
       .then((messageData) =>
-        console.log("WhatsApp message sent: " + messageData.sid);
+        console.log("WhatsApp message sent: " + messageData.sid));
       // console.log("WhatsApp message sent Successfully ")
 
       )
