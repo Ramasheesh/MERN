@@ -102,7 +102,7 @@ Please reach out to them at your earliest convenience.
   }
 });
 
-app.listen(PORT, HOST, async () => {
+app.listen(PORT,'0.0.0.0', HOST, async () => {
   try {
     await dbConnect.dbConnection();
     console.log(`Server listening on port: ${PORT} And Host: ${HOST}`);
