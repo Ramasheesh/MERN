@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import axios from "axios";
 
+
 const Contacts = () => {
   const [mobileNumber, setMobileNumber] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -29,8 +30,10 @@ const Contacts = () => {
       return;
     }
     setIsSubmitting(true);
+    const API_URL = process.env.REACT_APP_BACKEND_URL || "https://your-backend.onrender.com";
+
     try {
-      const response = axios.post("http://localhost:4000/send/message", {
+      const response = axios.post(`${API_URL}/send/message`, {
         name: name,
         email: email,
         message: message,
