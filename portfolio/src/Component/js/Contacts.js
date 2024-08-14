@@ -153,16 +153,14 @@ const Contacts = () => {
           <h3>Connect with me</h3>
           <p>Calling Numbers: 8874910202, 6283757617</p>
           <p>
-            WhatsApp Numbers:{" "}
+            WhatsApp Numbers:{"  "}
             <a
               href="https://wa.me/6283757617?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
               target="_blank"
               rel="noopener noreferrer"
             >
-              6283757617,
-            </a>
-          </p>
-          <p>
+              6283757617
+            </a>{",  "}
             <a
               href="https://wa.me/8874910202?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
               target="_blank"
@@ -172,23 +170,21 @@ const Contacts = () => {
             </a>
           </p>
           <p>
-            Telegram Numbers:{" "}
+            Telegram Numbers:{"  "}
             <a
               href="https://t.me/ramasheeshchauhan?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
               target="_blank"
               rel="noopener noreferrer"
             >
               6283757617
-            </a>{" "}
+            </a>{"  "}
           </p>
           <p>
-            Email:{" "}
+            Email:{"  "}
             <a href="mailto:ramasheesh.g7576@gmail.com?subject=Subject%20Here&body=Message%20Here">
               ramasheesh.g7576@gmail.com
             </a>
-          </p>
-          <p>
-            {" "}
+            {",  "}
             <a href="mailto:ramasheeshch9920@gmail.com?subject=Subject%20Here&body=Message%20Here">
               ramasheeshch9920@gmail.com
             </a>
