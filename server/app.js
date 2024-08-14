@@ -7,8 +7,8 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 
 const app = express();
-const PORT = process.env.PORT || 4040;
-const HOST = process.env.HOST || 'localhost';
+const PORT = process.env.PORT || 8000;
+const HOST = '0.0.0.0';
 const dbConnect = require("./connection/Db.connection");
 const Message = require("./models/contacts.js");
 
@@ -100,7 +100,7 @@ Please reach out to them at your earliest convenience.
   }
 });
 
-app.listen(PORT,'0.0.0.0', HOST, async () => {
+app.listen(PORT, HOST, async () => {
   try {
     await dbConnect.dbConnection();
     console.log(`Server listening on port: ${PORT} And Host: ${HOST}`);
