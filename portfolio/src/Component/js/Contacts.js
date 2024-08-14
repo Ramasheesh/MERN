@@ -22,7 +22,7 @@ const Contacts = () => {
     const email = formData.get("email");
     const message = formData.get("message");
     const mobileNumber = formData.get("number");
-    console.log('mobileNumber: ', mobileNumber);
+    console.log("mobileNumber: ", mobileNumber);
     const regex = /^[0-9]{10}$/;
     if (!regex.test(mobileNumber)) {
       alert("Please enter a valid 10-digit mobile number.");
@@ -32,9 +32,9 @@ const Contacts = () => {
     try {
       const response = axios.post("http://localhost:4000/send/message", {
         name: name,
-      email: email,
-      message: message,
-      mobileNumber: mobileNumber,
+        email: email,
+        message: message,
+        mobileNumber: mobileNumber,
       });
       console.log("response: ", response);
 
