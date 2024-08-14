@@ -12,12 +12,16 @@ import axios from "axios";
 
 
 const Contacts = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const form = event.target;
     const formData = new FormData(event.target);
     const name = formData.get("name");
     const email = formData.get("email");
@@ -44,6 +48,13 @@ const Contacts = () => {
       await new Promise((resolve) => setTimeout(resolve, 300));
       setSuccessMessage("Message sent successfully!");
       setTimeout(() => setSuccessMessage(""), 3000);
+      form.reset();
+
+      // Optionally, reset any state variables related to the form
+      setName("");
+      setEmail("");
+      setMessage("");
+      setMobileNumber("");
       // window.open("http://localhost:3000", "_self");
     } catch (error) {
       console.error(
@@ -76,6 +87,8 @@ const Contacts = () => {
                 id="name"
                 placeholder="Enter your name"
                 name="name"
+                value ={name}
+                onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
@@ -87,8 +100,11 @@ const Contacts = () => {
                 type="email"
                 className="form-control"
                 id="email"
-                placeholder="Enter your email"
                 name="email"
+                value = {email}
+                placeholder="Enter your email"
+                onChange={(e) => setEmail(e.target.value)}
+                
               />
             </div>
             <div className="form-group">
@@ -99,7 +115,9 @@ const Contacts = () => {
                 type="text"
                 className="form-control"
                 id="message"
+                value={message}
                 placeholder="Enter your message"
+                onChange={(e) => setMessage(e.target.value)}
                 name="message"
               />
             </div>
