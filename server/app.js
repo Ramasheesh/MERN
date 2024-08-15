@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const allowedOrigins = [
   'http://localhost:3000', // Local development
-  'https://ramasheesh.netlify.app/contacts' // Netlify deployment
+  'https://ramasheesh.netlify.app' // Netlify deployment
 ];
 
 app.use(cors({
