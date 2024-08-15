@@ -33,7 +33,7 @@ const Contacts = () => {
       return;
     }
     setIsSubmitting(true);
-    const API_URL = process.env.REACT_APP_BACKEND_URL || "https://your-backend.onrender.com";
+    const API_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:4000";
 
     try {
       const response = axios.post(`${API_URL}/send/message`, {
