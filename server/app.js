@@ -15,7 +15,23 @@ const Message = require("./models/contacts.js");
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+const allowedOrigins = [
+  'http://localhost:3000', // Local development
+  'https://ramasheesh.netlify.app/contacts' // Netlify deployment
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      const msg = 'The CORS policy for this site does not allow access from the specified origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
+  methods: 'GET,POST,PUT,DELETE',
+}));
 
 app.post("/send/message", async (req, res) => {
   try {
