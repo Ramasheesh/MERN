@@ -8,7 +8,7 @@ const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 8000;
-const HOST = '0.0.0.0';
+const HOST = '0.0.0.0' || process.env.PORT;
 const dbConnect = require("./connection/Db.connection");
 const Message = require("./models/contacts.js");
 
