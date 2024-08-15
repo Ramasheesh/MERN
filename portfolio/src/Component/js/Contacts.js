@@ -27,7 +27,6 @@ const Contacts = () => {
     const email = formData.get("email");
     const message = formData.get("message");
     const mobileNumber = formData.get("number");
-    console.log("mobileNumber: ", mobileNumber);
     const regex = /^[0-9]{10}$/;
     if (!regex.test(mobileNumber)) {
       alert("Please enter a valid 10-digit mobile number.");

@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 const twilio = require("twilio");
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser');
 const cors = require("cors");
 
 const app = express();
@@ -12,6 +12,7 @@ const HOST = '0.0.0.0' || process.env.PORT;
 const dbConnect = require("./connection/Db.connection");
 const Message = require("./models/contacts.js");
 
+app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
