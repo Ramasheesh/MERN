@@ -35,8 +35,8 @@ const About = () => {
           <li>Completed 12th in 2016 with <span className='highlight-2'> 81% </span> Marks in Science subjects.</li>
           <li>Completed 10th in 2014 with <span className='highlight-2'> 83% </span> Marks in Science subjects.</li>
           <li>
-            Prepared for JEE Mains + Advanced from 2015 to 2017 at Kota Center
-            Career-Point and Resonance.
+            Prepared for JEE Mains + Advanced from Kota Center
+            (Career-Point and Resonance) in 2016 and 2017.
           </li>
           <li>
             B.E / B.Tech in Computer Science and Engineering from Punjab

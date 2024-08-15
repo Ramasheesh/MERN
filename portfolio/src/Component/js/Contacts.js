@@ -10,13 +10,18 @@ import {
 } from "react-icons/fa";
 import axios from "axios";
 
+
 const Contacts = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const form = event.target;
     const formData = new FormData(event.target);
     const name = formData.get("name");
     const email = formData.get("email");
@@ -29,8 +34,10 @@ const Contacts = () => {
       return;
     }
     setIsSubmitting(true);
+    const API_URL = process.env.REACT_APP_BACKEND_URL || "https://your-backend.onrender.com";
+
     try {
-      const response = axios.post("http://localhost:4000/send/message", {
+      const response = axios.post(`${API_URL}/send/message`, {
         name: name,
         email: email,
         message: message,
@@ -41,6 +48,13 @@ const Contacts = () => {
       await new Promise((resolve) => setTimeout(resolve, 300));
       setSuccessMessage("Message sent successfully!");
       setTimeout(() => setSuccessMessage(""), 3000);
+      form.reset();
+
+      // Optionally, reset any state variables related to the form
+      setName("");
+      setEmail("");
+      setMessage("");
+      setMobileNumber("");
       // window.open("http://localhost:3000", "_self");
     } catch (error) {
       console.error(
@@ -73,6 +87,8 @@ const Contacts = () => {
                 id="name"
                 placeholder="Enter your name"
                 name="name"
+                value ={name}
+                onChange={(e) => setName(e.target.value)}
                 required
               />
             </div>
@@ -84,8 +100,11 @@ const Contacts = () => {
                 type="email"
                 className="form-control"
                 id="email"
-                placeholder="Enter your email"
                 name="email"
+                value = {email}
+                placeholder="Enter your email"
+                onChange={(e) => setEmail(e.target.value)}
+                
               />
             </div>
             <div className="form-group">
@@ -96,7 +115,9 @@ const Contacts = () => {
                 type="text"
                 className="form-control"
                 id="message"
+                value={message}
                 placeholder="Enter your message"
+                onChange={(e) => setMessage(e.target.value)}
                 name="message"
               />
             </div>
@@ -132,16 +153,14 @@ const Contacts = () => {
           <h3>Connect with me</h3>
           <p>Calling Numbers: 8874910202, 6283757617</p>
           <p>
-            WhatsApp Numbers:{" "}
+            WhatsApp Numbers:{"  "}
             <a
               href="https://wa.me/6283757617?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
               target="_blank"
               rel="noopener noreferrer"
             >
-              6283757617,
-            </a>
-          </p>
-          <p>
+              6283757617
+            </a>{",  "}
             <a
               href="https://wa.me/8874910202?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
               target="_blank"
@@ -151,23 +170,21 @@ const Contacts = () => {
             </a>
           </p>
           <p>
-            Telegram Numbers:{" "}
+            Telegram Numbers:{"  "}
             <a
               href="https://t.me/ramasheeshchauhan?text=Hello%20RamAsheesh%2C%20I%20would%20like%20to%20connect%20with%20you."
               target="_blank"
               rel="noopener noreferrer"
             >
               6283757617
-            </a>{" "}
+            </a>{"  "}
           </p>
           <p>
-            Email:{" "}
+            Email:{"  "}
             <a href="mailto:ramasheesh.g7576@gmail.com?subject=Subject%20Here&body=Message%20Here">
               ramasheesh.g7576@gmail.com
             </a>
-          </p>
-          <p>
-            {" "}
+            {",  "}
             <a href="mailto:ramasheeshch9920@gmail.com?subject=Subject%20Here&body=Message%20Here">
               ramasheeshch9920@gmail.com
             </a>
