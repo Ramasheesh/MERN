@@ -8,7 +8,7 @@ import {
   FaTelegram,
   FaInstagram,
 } from "react-icons/fa";
-import axios from "axios";
+// import axios from "axios";
 
 
 const Contacts = () => {
