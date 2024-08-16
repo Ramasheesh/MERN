@@ -110,7 +110,7 @@ Please reach out to them at your earliest convenience.
       })
       .then((messageData) => console.log("SMS sent Successfully " + messageData.sid))
       .catch((err) => console.log(err));
-    res.send("Message sent successfully");
+      res.status(200).json({ message: "Message sent successfully" });
   } catch (err) {
     console.error("An error occurred: ", err);
     res.status(500).json({ error: "Internal server error" });
