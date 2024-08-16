@@ -41,7 +41,7 @@ const Contacts = () => {
         message: message,
         mobileNumber: mobileNumber,
       });
-      console.log("response: ", response);
+      console.log("response: ", response.data);
 
       await new Promise((resolve) => setTimeout(resolve, 300));
       setSuccessMessage("Message sent successfully!");
