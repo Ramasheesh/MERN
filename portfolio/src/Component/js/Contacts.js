@@ -35,13 +35,20 @@ const Contacts = () => {
     setIsSubmitting(true);
 
     try {
-      const response = axios.post(`https://portfolio-xawd.onrender.com/send/message`, {
-        name: name,
-        email: email,
-        message: message,
-        mobileNumber: mobileNumber,
+      const response = await fetch('https://portfolio-xawd.onrender.com/send/message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message,
+          mobileNumber: mobileNumber,
+        }),
       });
-      console.log("response: ", response.data);
+      const data = await response.json();
+      console.log('Response:', data);
 
       await new Promise((resolve) => setTimeout(resolve, 300));
       setSuccessMessage("Message sent successfully!");
