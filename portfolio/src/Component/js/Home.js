@@ -120,7 +120,7 @@ const Home = () => {
           </div>
           <div className ="button-setup">
             <a
-              href="https://drive.google.com/file/d/19bPDOjTig4US22LIS8o9o4HILOLT6h_B/view?usp=sharing"
+              href="https://drive.google.com/file/d/1qHpddWk5YBH2WLmCj0GsmW58e5cgJ638/view?usp=sharing"
               className="resume-button"
             >
               My Resume
